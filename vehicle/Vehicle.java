@@ -36,7 +36,7 @@ public class Vehicle {
 	 * @param modelYear the year of the model
 	 * @param license the license of the vehicle
 	 */
-	public Vehicle(int passengers, int fuelCap, double kpl, String make, String model, int modelYear, String license) {
+	public Vehicle(String make, String model, int modelYear, String license, int passengers, int fuelCap, double kpl) {
 		this.passengers = passengers;
 		setPassengers(passengers);
 		this.fuelCap = fuelCap;
@@ -76,7 +76,7 @@ public class Vehicle {
 	 * @return a formatted string of instance variables
 	 */
 	public String toFormattedString() {
-		return String.format("%1$12s %2$10s %3$6d %4$10s %5$6d %6$6d %7$6.1f %8$8d",
+		return String.format("%1$12s %2$10s %3$6d %4$10s %5$6d %6$6d %7$6.1f %8$6d",
 				make, model, modelYear, license, passengers, fuelCap, kpl, range());
 	}
 	

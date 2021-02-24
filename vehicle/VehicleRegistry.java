@@ -57,7 +57,7 @@ public class VehicleRegistry {
 	 */
 	public void list() {
 		System.out.println("Vehicles in registry:");
-		System.out.println("         Manufacturer      Model   Year    License  Pass.   Fuel    KPL    Range");
+		//System.out.println("         Manufacturer      Model   Year    License  Pass.   Fuel    KPL  Range");
 		for (Vehicle car : vehicleList) {
 			System.out.println("Vehicle: " + car.toFormattedString());
 		}
@@ -77,6 +77,15 @@ public class VehicleRegistry {
 			remove(car);
 			return car;
 		}
+	}
+	
+	/**
+	 * Get the Vehicle list size
+	 * @return the size of the Vehicle list
+	 */
+	public int getSize() {
+		return vehicleList.size();
+		
 	}
 	
 }

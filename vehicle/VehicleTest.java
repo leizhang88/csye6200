@@ -20,26 +20,36 @@ public class VehicleTest {
 	 * Do work here
 	 */
 	public void run() {
+		System.out.println("***Test 1***\nCreate an instance of TruckVehicle:");
+		TruckVehicle truck = new TruckVehicle("GMC", "Canyon", 2021, "'TCD010'", 2, 50, 45.0, 2.0, 1.9, 2.4); 
+		System.out.println("Truck:   " + truck.toFormattedString() + "\n");
+		
+		
+		System.out.println("\n***Test 2***\nGenerate a Vehicle list:");
 		// Created three instances of class Vehicle
-		Vehicle minivan = new Vehicle(6, 30, 25.0, "Ford", "Fusion", 2016, "UZM 981"); 
-		Vehicle sportscar = new Vehicle(2, 20, 40, "Chevrolet", "Corvette", 2020, "522 NTR"); 
-		Vehicle sedan = new Vehicle(4, 40, 33.2, "Lexus", "LS", 2021, "ABC 123"); 
+		Vehicle minivan = new Vehicle("Ford", "Fusion", 2016, "'UZM981'", 6, 30, 25.0); 
+		Vehicle sportscar = new Vehicle("Chevrolet", "Corvette", 2020, "'522NTR'", 2, 20, 40); 
+		Vehicle sedan = new Vehicle("Lexus", "LS", 2021, "'ABC123'", 4, 40, 33.2); 
 		
-		VehicleRegistry vr = new VehicleRegistry(); // Create an instance of VehicleRegistry
-		
-		// Add the vehicles to the ArrayList and the HashMap
+		// Add Vehicles to the list
+		VehicleRegistry vr = new VehicleRegistry(); 
 		vr.add(minivan);
 		vr.add(sportscar);
 		vr.add(sedan);
-		System.out.println("Added three vehicles\n");
 		
 		vr.list(); // Display all the vehicles in the ArrayList
 		
-		Vehicle car = vr.retrieve("ABC 123"); // Retrieve a vehicle with the given license from the HsahMap
-		System.out.println("\nRetrieve a vehicle with the licnese palte \'ABC 123\'\n");
 		
-		vr.list(); // Display again
+		String fileName = "src/edu/neu/csye6200/vehicle/VehicleIOTest.txt";
+		RentalAgencyIO raIO = new RentalAgencyIO();
 		
+		System.out.println("\nWriting to the file...");
+		raIO.save(vr, fileName); // Save the Vehicle list to the file
+		
+		System.out.println("\nLoading from the file and print out the new vehicle list...");
+		VehicleRegistry vrNew = new VehicleRegistry();
+		raIO.load(vrNew, fileName);
+		vrNew.list();
 		
 	}
 	
