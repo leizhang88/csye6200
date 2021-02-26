@@ -64,7 +64,11 @@ public class RentalAgencyIO {
 			
 			String line = reader.readLine();
 			while (line != null) {
-				values = line.split("\\s+"); // Split the string by spaces. Note the first element is space
+				// Extract values from each line
+				values = line.split(","); 
+				for (int i = 0; i < values.length; i++) {
+					values[i] = values[i].trim();
+				}
 				
 				// Create an instance of Vehicle
 				Vehicle car = new Vehicle(values[1], values[2], Integer.parseInt(values[3]), values[4], 

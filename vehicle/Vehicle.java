@@ -76,7 +76,7 @@ public class Vehicle {
 	 * @return a formatted string of instance variables
 	 */
 	public String toFormattedString() {
-		return String.format("%1$12s %2$10s %3$6d %4$10s %5$6d %6$6d %7$6.1f %8$6d",
+		return String.format("Vehicle,%1$12s,%2$10s,%3$6d,%4$10s,%5$6d,%6$6d,%7$6.1f,%8$6d",
 				make, model, modelYear, license, passengers, fuelCap, kpl, range());
 	}
 	

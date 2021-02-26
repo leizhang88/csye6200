@@ -40,7 +40,7 @@ public class TruckVehicle extends Vehicle {
 	}
 	
 	public String toFormattedString() {
-		return super.toFormattedString() + String.format(" %1$6.2f", getArea());
+		return "Truck" + super.toFormattedString() + String.format(",%1$6.2f", getArea());
 	}
 
 }

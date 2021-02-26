@@ -59,7 +59,7 @@ public class VehicleRegistry {
 		System.out.println("Vehicles in registry:");
 		//System.out.println("         Manufacturer      Model   Year    License  Pass.   Fuel    KPL  Range");
 		for (Vehicle car : vehicleList) {
-			System.out.println("Vehicle: " + car.toFormattedString());
+			System.out.println(car.toFormattedString());
 		}
 	}
 	

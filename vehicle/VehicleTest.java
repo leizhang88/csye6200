@@ -22,7 +22,7 @@ public class VehicleTest {
 	public void run() {
 		System.out.println("***Test 1***\nCreate an instance of TruckVehicle:");
 		TruckVehicle truck = new TruckVehicle("GMC", "Canyon", 2021, "'TCD010'", 2, 50, 45.0, 2.0, 1.9, 2.4); 
-		System.out.println("Truck:   " + truck.toFormattedString() + "\n");
+		System.out.println(truck.toFormattedString() + "\n");
 		
 		
 		System.out.println("\n***Test 2***\nGenerate a Vehicle list:");
@@ -46,7 +46,8 @@ public class VehicleTest {
 		System.out.println("\nWriting to the file...");
 		raIO.save(vr, fileName); // Save the Vehicle list to the file
 		
-		System.out.println("\nLoading from the file and print out the new vehicle list...");
+		System.out.println("\nLoading from the file...");
+		System.out.println("\nThis is the new Vehicle list");
 		VehicleRegistry vrNew = new VehicleRegistry();
 		raIO.load(vrNew, fileName);
 		vrNew.list();
